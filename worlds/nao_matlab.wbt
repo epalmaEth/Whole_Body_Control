@@ -1,0 +1,58 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+  info [
+    "Aldebaran's Nao H25 V5.0"
+  ]
+  title "Aldebaran Nao H25 V5.0"
+  basicTimeStep 20
+  FPS 20
+  coordinateSystem "NUE"
+  contactProperties [
+    ContactProperties {
+      material1 "NAO foot material"
+      coulombFriction [
+        7
+      ]
+      bounce 0.3
+      bounceVelocity 0.003
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.7419096927379362 -0.07946678010815891 -0.665774014723271 1.5886052403685345
+  position -1.9719407896800583 1.6408380381525223 -2.4940388432730156
+  follow "NAO"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931957
+  size 25 25
+  tileSize 0.8 0.8
+  appearance Grass {
+  }
+}
+Nao {
+  translation -1 0.33333 -0.5
+  rotation 1 0 0 -1.57
+  controller "nao_matlab"
+  supervisor TRUE
+}
+RobocupSoccerBall {
+  translation -0.8 0.08 -0.56
+  rotation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931957
+}
+DEF POINT Solid {
+  children [
+    Shape {
+      appearance DEF SPHERE_COLOR PBRAppearance {
+        baseColor 0 1 0
+      }
+      geometry DEF SPHERE_GEOMETRY Sphere {
+        radius 0.02
+      }
+    }
+  ]
+}
